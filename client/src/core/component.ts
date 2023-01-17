@@ -1,9 +1,10 @@
-
+import { routerObserve } from "./router";
+import { storeObserve } from "./store";
 
 /**
  *  코어 폴더 컴포넌트 : 컴포넌트 구현 시, 중복 코드를 줄이고 컴포넌트들이 모두 동일한 라이프 사이클을 가지게 해
  *  유지보수를 편리하게 하기 위한 컴포넌트들의 기본 구조
- * 
+ *
  *  옵저버 패턴의 구독, 알림 형태를 차용하여 부모의 상태 변경 -> 자식 상태 변경
  */
 class Component<IProps = unknown, IState = unknown> {
@@ -29,6 +30,7 @@ class Component<IProps = unknown, IState = unknown> {
 
     protected useSeletor(): void {}
     protected usePathName(): void {}
+    protected bindEvents(): void {}
     protected initDom(): void {}
     protected initChildren(): void {}
     protected componentWillMount(): void {}
@@ -79,7 +81,7 @@ class Component<IProps = unknown, IState = unknown> {
     private renderChildren(): void {
         this.children.forEach((child) => {
             this.$container.appendChild(child.returnRoot());
-        })
+        });
     }
 
     /**
@@ -104,7 +106,7 @@ class Component<IProps = unknown, IState = unknown> {
     }
 
     /**
-     * HTMLElementEventMap, EventListener를 인자로 
+     * HTMLElementEventMap, EventListener를 인자로
      */
     protected rootEvent(
         type: keyof HTMLElementEventMap,
