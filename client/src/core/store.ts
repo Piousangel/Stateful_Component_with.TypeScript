@@ -16,6 +16,9 @@ class Store<Istate> {
         this.observers = new Set();
     }
 
+    /**
+     *  해당 스토어의 리듀서의 타입과 props로 받을 데이터를 통해 리덕스로 사용할 수 있어요!
+     */
     public dispatch({ type, data = null }): void {
         this.reducer[type]({ data });
     }
