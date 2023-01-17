@@ -9,7 +9,7 @@ class Header extends Component {
     protected initChildren(): void {}
 
     protected render(): void {
-        this.$container.innerHTML = ``;
+        this.$container.innerHTML = `<h1>Header</h1>`;
     }
 }
 

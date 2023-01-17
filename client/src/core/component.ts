@@ -21,7 +21,7 @@ class Component<IProps = unknown, IState = unknown> {
     }[] = [];
 
     /**
-     * constructor은 우리가 만든 컴포넌트가 처음 부라우저 상에 나타날 때 만들어지는 과정에서 가장 먼저 실행되는 함수
+     * constructor은 우리가 만든 컴포넌트가 처음 브라우저 상에 나타날 때 만들어지는 과정에서 가장 먼저 실행되는 함수
      */
     constructor(props?: IProps) {
         this.props = props;

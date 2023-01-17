@@ -53,7 +53,7 @@ class Router<IPage> {
      *  html에서 a태그나 submit 태그는 고유의 동작이 있죠 페이지를 이동시키거나 form 안의 Input을 전송한다거나?
      *  - e.preventDefault()는 그 동작을 중단시킵니다.
      *  - e.stopPropagation()는 이벤트가 상위 엘리먼트에 전달되지 않게 막아줍니다.
-     *  
+     *
      *  - HTMLAnchorElement 인터페이스 : 하이퍼링크(hyperlink) 기능을 갖는 요소(<a>)를 다루며 이러한 기능을 위한 특별한 속성과 메소드를 제공하는 인터페이스
      */
     private bindEvents(): void {
@@ -86,7 +86,7 @@ class Router<IPage> {
         if (this.pages[href]) {
             $main.appendChild(this.pages[href].mount());
         }
-        this.observers.forEach((observers) => observers());
+        this.observers.forEach((observer) => observer());
     }
 }
 
