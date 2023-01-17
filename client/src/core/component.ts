@@ -45,6 +45,16 @@ class Component<IProps = unknown, IState = unknown> {
         this.children.forEach((child) => child.updateComponent());
     }
 
+    /**
+     * initDom -> 해당 컴포넌트의 Container가 될 Element를 등록한다.
+     * initChildren 자식 컴포넌트를 등록한다.
+     * storeObserveruseSelector -> useSelector에서 특정 스토어의 데이터가 쓰이는지 확인, 
+     * 쓰인다면 해당 컴포넌트를 스토어의 옵저버로 등록하고, 스토어의 상태값이 변할때마다 updateComponent 메서드를 실행해요
+     * 
+     * routerObserverusePathName -> usePathname에서 라우팅의 pathname이 참조되는지 확인하고
+     * 참조된다면 해당 컴포넌트를 라우터의 옵저버로 등록 및
+     * pathname이 변경될 때 마다 render 메서드 실행하여 리렌더링해요.
+     */
     protected setUp(): void {
         this.initDom();
         this.initChildren();
@@ -61,6 +71,11 @@ class Component<IProps = unknown, IState = unknown> {
     /**
      *  브라우저에 나타나게 되면 호출되며, 예를 들어 외부 라이브러리를 사용했을 때, 특정 DOM에 그려주세요, 네트워크 요청, API, Ajax 요청을 할 때 사용
      *  우리가 만든 컴포넌트가 브라우저에 나타난 그 시점에 어떤 작업을 하겠다.
+     * 
+     *  componentWillMount 컴포넌트가 렌더링 되기 전 실행 / 주로 스토어에 dispatch를 보내는 역할을 해요
+     *  render 컴포넌트 렌더링해요
+     *  bindEvents 필요한 이벤트를 바인딩 해요
+     *  children mounting 등록된 자식 컴포넌트를 마운팅해요
      */
     public mount(): HTMLElement {
         this.componentWillMount();
@@ -85,8 +100,9 @@ class Component<IProps = unknown, IState = unknown> {
     }
 
     /**
-     *   작업을 마치고 컴포넌트가 업데이트 되었을 때 호출되는 함수. 주로 state가 바귀었을 때, 이전 상태와 지금 상태의 페이지가 바뀌었을 때
-     *   this.state.page, pre.state.page 가 다를때 어떤 작업을 하겠다!
+     *   작업을 마치고 컴포넌트가 업데이트 되었을 때 호출되는 함수. 주로 state가 바귀었을 때, 
+     *   이전 상태와 지금 상태의 페이지가 바뀌었을 때
+     *   this.state.page, pre.state.page 가 다를때 어떤 작업을 해요.
      */
     protected updateComponent(): void {
         this.componentWillMount();
@@ -96,7 +112,7 @@ class Component<IProps = unknown, IState = unknown> {
     }
 
     /**
-     * componentDidMount에서 설정한 리스너를 해당 자식까지 없애줌 -> 마운트 해제!
+     * componentDidMount에서 등록된 이벤트를 해당 자식까지 모두 없애요 -> 마운트 해제
      */
     public componentWillUnmount(): void {
         this.events.forEach(({ type, handler }) => {

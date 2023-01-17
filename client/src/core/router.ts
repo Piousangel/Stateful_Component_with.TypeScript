@@ -76,7 +76,10 @@ class Router<IPage> {
     }
 
     /**
-     *  조금 더 생각..
+     *  history.state로 라우팅 기능을 구현했어요.
+     *  popstate 이벤트와, Anchor Tag 클릭 이벤트를 처리해요.
+     *  Props로 페이지 컴포넌트를 받아와서, 요청받은 주소에 따른 페이지를 마운팅/언마운팅을 해요.
+     *  새로고침 했을 경우에는 webpack historyApiFallback 설정을 통해 해당 페이지를 제공해요.
      */
     private render(): void {
         this.unmount();
