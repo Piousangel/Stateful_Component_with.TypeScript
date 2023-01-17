@@ -1,7 +1,7 @@
-
+import Layout from "./components/Layout";
 import Component from "./core/component";
+import router from "./router";
 import { $ } from "./utils/dom";
-
 
 class App extends Component {
     protected initDom(): void {
@@ -12,8 +12,7 @@ class App extends Component {
         const layout = new Layout();
         this.children = [layout];
         this.mount();
-        router
-        
+        router.push(router.pathname());
     }
 }
 
