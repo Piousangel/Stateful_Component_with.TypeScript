@@ -19,4 +19,23 @@
 ### 바벨
 - `$ yarn add -D @babel/core babel-loader` , `yarn add -D @babel/preset-env` (오래된 브라우저에서 동작하기)
 ### 타입스크립트
-`$ yarn add -D typescript @babel/preset-typescript`
+- `$ yarn add -D typescript @babel/preset-typescript`
+
+### webpack.config.js 
+
+- `ts-loader` 관련 `$ yarn add ts-loader`
+- `sass-loader` 관련 `$ yarn add sass -g`, `$ yarn add sass-loader` 
+
+
+
+### Build -> Start
+- client : 
+0. `$cd client` 
+1. `$yarn add` 
+2. `$yarn build` 번들링 후 
+3. `$yarn dev` 로 실행
+
+- server : ( 추후 개발 예정 아직 실행 안됩니당)
+0. `$cd server`
+1. `$npm install` 
+2. `$yarn start:server` 로 실행
