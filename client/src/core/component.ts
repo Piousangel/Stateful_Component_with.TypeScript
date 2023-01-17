@@ -6,6 +6,11 @@ import { storeObserve } from "./store";
  *  유지보수를 편리하게 하기 위한 컴포넌트들의 기본 구조
  *
  *  옵저버 패턴의 구독, 알림 형태를 차용하여 부모의 상태 변경 -> 자식 상태 변경
+ *  this 는 함수가 호출될 때 마다 각각의 함수에 바인딩 됩니다!
+ * 
+ *  자바스크립트 생성자 함수
+ *  
+ *  ps. prototype 객체는 원형 즉, 원래의 모습이에요. 같은 생성자로부터 만들어진 객체들은 모두 이 원형 객체를 공유해요
  */
 class Component<IProps = unknown, IState = unknown> {
     protected $container: HTMLElement = document.createElement("div");
@@ -21,7 +26,9 @@ class Component<IProps = unknown, IState = unknown> {
     }[] = [];
 
     /**
-     * constructor은 우리가 만든 컴포넌트가 처음 브라우저 상에 나타날 때 만들어지는 과정에서 가장 먼저 실행되는 함수
+     * new 클래스 이름으로 생성해서 사용하려고 해요. 
+     * 인자로 props를 넘겨받을 수 있어요.
+     * setUp()을 실행해요. 
      */
     constructor(props?: IProps) {
         this.props = props;
@@ -46,10 +53,10 @@ class Component<IProps = unknown, IState = unknown> {
     }
 
     /**
-     * initDom -> 해당 컴포넌트의 Container가 될 Element를 등록한다.
-     * initChildren 자식 컴포넌트를 등록한다.
+     * initDom -> 해당 컴포넌트의 Container가 될 Element를 등록해요.
+     * initChildren -> 자식 컴포넌트를 등록해요.
      * storeObserveruseSelector -> useSelector에서 특정 스토어의 데이터가 쓰이는지 확인, 
-     * 쓰인다면 해당 컴포넌트를 스토어의 옵저버로 등록하고, 스토어의 상태값이 변할때마다 updateComponent 메서드를 실행해요
+     * 쓰인다면 해당 컴포넌트를 스토어의 옵저버로 등록하고, 스토어의 상태값이 변할때마다 updateComponent 메서드를 실행해요.
      * 
      * routerObserverusePathName -> usePathname에서 라우팅의 pathname이 참조되는지 확인하고
      * 참조된다면 해당 컴포넌트를 라우터의 옵저버로 등록 및
@@ -69,13 +76,13 @@ class Component<IProps = unknown, IState = unknown> {
     }
 
     /**
-     *  브라우저에 나타나게 되면 호출되며, 예를 들어 외부 라이브러리를 사용했을 때, 특정 DOM에 그려주세요, 네트워크 요청, API, Ajax 요청을 할 때 사용
+     *  브라우저에 나타나게 되면 호출되며, 예를 들어 외부 라이브러리를 사용했을 때, 특정 DOM에 그려주세요, 네트워크 요청, API, Ajax 요청을 할 때 사용해요.
      *  우리가 만든 컴포넌트가 브라우저에 나타난 그 시점에 어떤 작업을 하겠다.
      * 
-     *  componentWillMount 컴포넌트가 렌더링 되기 전 실행 / 주로 스토어에 dispatch를 보내는 역할을 해요
-     *  render 컴포넌트 렌더링해요
-     *  bindEvents 필요한 이벤트를 바인딩 해요
-     *  children mounting 등록된 자식 컴포넌트를 마운팅해요
+     *  componentWillMount 컴포넌트가 렌더링 되기 전 실행 / 주로 스토어에 dispatch를 보내는 역할을 해요.
+     *  render 컴포넌트 렌더링해요.
+     *  bindEvents 필요한 이벤트를 바인딩 해요.
+     *  children mounting 등록된 자식 컴포넌트를 마운팅해요.
      */
     public mount(): HTMLElement {
         this.componentWillMount();
@@ -112,7 +119,7 @@ class Component<IProps = unknown, IState = unknown> {
     }
 
     /**
-     * componentDidMount에서 등록된 이벤트를 해당 자식까지 모두 없애요 -> 마운트 해제
+     * componentDidMount에서 등록된 이벤트를 해당 자식까지 모두 없애요. -> 마운트 해제
      */
     public componentWillUnmount(): void {
         this.events.forEach(({ type, handler }) => {
@@ -122,7 +129,8 @@ class Component<IProps = unknown, IState = unknown> {
     }
 
     /**
-     * HTMLElementEventMap, EventListener를 인자로
+     * HTMLElementEventMap, EventListener를 인자로 받아요
+     * ex) this.rootEvent("click", (e: Event) => this.handleButtonClick(e)) 이런식으로 사용하려고 해요.
      */
     protected rootEvent(
         type: keyof HTMLElementEventMap,
