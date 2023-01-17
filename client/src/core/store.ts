@@ -6,10 +6,14 @@ export const storeObserve = (selector: Function, cb: Function): void => {
     currentObserver = null;
 };
 
+/**
+ *  주로 상속을 통해 사용하려고 해요.
+ */
 class Store<Istate> {
     protected state: Istate;
     protected reducer: Record<string, Function>;
     protected observers: Set<Function>;
+
 
     constructor(initState: Istate) {
         this.state = initState;
