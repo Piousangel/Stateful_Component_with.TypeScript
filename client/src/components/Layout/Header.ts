@@ -13,7 +13,7 @@ class Header extends Component {
     }
 
     protected render(): void {
-        this.$container.innerHTML = `<h1>Header</h1>`;
+        this.$container.innerHTML = ``;
     }
 }
 

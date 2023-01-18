@@ -10,5 +10,13 @@ export enum PATH {
     DICTIONARY = "/dictionary",
 }
 
+export enum CategoryTitle {
+    popularity = "인기",
+    news = "뉴스",
+    sports = "스포츠",
+    webtoon = "웹툰",
+    dict = "사전",
+}
+
 export const TIMEOUT = 5000;
 export const SERVER_ERROR = new Error("Server Error!");
