@@ -7,7 +7,11 @@ class Footer extends Component {
     }
 
     protected render(): void {
-        this.$container.innerHTML = `<h1>Footer</h1>`;
+        this.$container.innerHTML = `
+        <span>
+            This Area is Footer
+        </span>
+        `;
     }
 }
 
