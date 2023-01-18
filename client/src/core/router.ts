@@ -1,6 +1,5 @@
 import { frontURL } from "@/constants";
 import { $, closest } from "@/utils/dom";
-import { HtmlTagObject } from "html-webpack-plugin";
 
 let currentObserver = null;
 

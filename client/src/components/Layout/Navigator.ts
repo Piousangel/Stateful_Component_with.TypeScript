@@ -9,7 +9,7 @@ class Navigator extends Component {
     }
 
     protected initDom(): void {
-        this.$container = newElement(`<nav/>`);
+        this.$container = newElement(`<wrap/>`);
     }
 
     private checkPath(path: string): boolean {
@@ -21,6 +21,16 @@ class Navigator extends Component {
 
         this.$container.innerHTML = `
         <ul class="menu-container">
+            <li class=${this.checkPath(PATH.HOME) ? "clicked" : ""}>
+                <a data-id="home" href="${PATH.HOME}">
+                    ${HOME}
+                </a>
+            </li>
+            <li class=${this.checkPath(PATH.HOME) ? "clicked" : ""}>
+                <a data-id="home" href="${PATH.HOME}">
+                    ${HOME}
+                </a>
+            </li>
             <li class=${this.checkPath(PATH.HOME) ? "clicked" : ""}>
                 <a data-id="home" href="${PATH.HOME}">
                     ${HOME}
