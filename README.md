@@ -1,5 +1,6 @@
 # 프로젝트 만들어 나가는 과정
 
+## 얻고자 하는 것 : 바닐라 타입스크립트로 상태기반 컴포넌트, React Flux 패턴을 좀더 깊게 이해하고자 합니다. 그리고 css도...
 
 # 폴더
 
@@ -35,7 +36,7 @@
 2. `$yarn build` 번들링 후 
 3. `$yarn dev` 로 실행
 
-- server : ( 추후 개발 예정 아직 실행 안됩니당)
+- server : ( json API 서버를 사용해 개발하려고 합니다. 데이터는 naver에 있는거 가져와 쓰려고 합니다...! )
 0. `$cd server`
 1. `$npm install` 
 2. `$yarn start:server` 로 실행
