@@ -2,6 +2,8 @@
 
 ## 얻고자 하는 것 : 바닐라 타입스크립트로 상태기반 컴포넌트, React Flux 패턴을 좀더 깊게 이해하고자 합니다. 그리고 css도...
 
+- 클래스형 컴포넌트의 componenetDidMount, componentDidUpdate, componentWillUnmount 생명주기와 함수형 컴포넌트에서의 useEffect..
+
 # 폴더
 
 - `client`, `server` 폴더를 생성합니다.
