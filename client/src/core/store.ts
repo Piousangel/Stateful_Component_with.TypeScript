@@ -13,8 +13,7 @@ class Store<Istate> {
     protected state: Istate;
     protected reducer: Record<string, Function>;
     protected observers: Set<Function>;
-
-
+    
     constructor(initState: Istate) {
         this.state = initState;
         this.observers = new Set();
