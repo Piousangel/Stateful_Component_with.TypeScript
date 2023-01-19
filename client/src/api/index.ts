@@ -1,5 +1,4 @@
-import { backURL, SERVER_ERROR } from "@/constants";
-
+import { backURL, SERVER_ERROR, TIMEOUT } from "@/constants";
 
 const controller = new AbortController();
 const signal = controller.signal;
@@ -15,6 +14,8 @@ const request = async (endPoint: string, time: number) => {
     return data;
 };
 
-const api = {};
+const api = {
+    getContents: () => request("/contents", TIMEOUT),
+};
 
 export default api;
