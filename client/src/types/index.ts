@@ -25,6 +25,12 @@ export enum ApiStatus {
     FAIL = "FAIL",
 }
 
+export interface ContentsList {
+    contents: Contents[];
+    hasMore: boolean;
+    lastKey: number;
+}
+
 export interface Action<T = unknown> {
     type: string;
     data?: T;
