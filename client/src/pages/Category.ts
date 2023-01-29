@@ -1,12 +1,15 @@
 import { GET_CONTENTS_REQUEST } from "@/actions/contents";
+import Loader from "@/components/Shared/Loader";
 import Component from "@/core/component";
+import router from "@/router";
+import { interestCategoryStorage } from "@/storage";
 import contentsStore from "@/stores/contentStore";
-import { ApiStatus } from "@/types";
+import { ApiStatus, Category as CategoryType, Contents } from "@/types";
 import { newElement } from "@/utils/dom";
 
 interface IState {
     status: ApiStatus | null;
-    category: Catego;
+    category: CategoryType;
 }
 
 class Category extends Component<{}, IState> {
@@ -23,9 +26,9 @@ class Category extends Component<{}, IState> {
         contentsStore.dispatch(GET_CONTENTS_REQUEST(this.state.category));
     }
 
-    private getInterestContentList(data): ZumContents[] {
+    private getInterestContentList(data): Contents[] {
         const interestCategories = interestCategoryStorage.get();
-        let interestContentList: ZumContents[] = [];
+        let interestContentList: Contents[] = [];
 
         for (let i = 0; i < interestCategories.length; i++) {
             interestContentList.push(...data[interestCategories[i]]);
@@ -38,24 +41,24 @@ class Category extends Component<{}, IState> {
         const id = target.id;
         let { data } = this.useSelector();
 
-        const bookMarkedContentList = data[this.state.category].filter(
-            (data) => data.link === id
-        );
+        // const bookMarkedContentList = data[this.state.category].filter(
+        //     (data) => data.link === id
+        // );
 
-        const getIdex = data[this.state.category].indexOf(
-            bookMarkedContentList[0]
-        );
+        // const getIdex = data[this.state.category].indexOf(
+        //     bookMarkedContentList[0]
+        // );
 
-        data[this.state.category][getIdex] = {
-            ...bookMarkedContentList[0],
-            isBookMarked: true,
-        };
-        bookMarkedContentList[0].isBookMarked = true;
+        // data[this.state.category][getIdex] = {
+        //     ...bookMarkedContentList[0],
+        //     isBookMarked: true,
+        // };
+        // bookMarkedContentList[0].isBookMarked = true;
 
-        const tempStorage = bookmarkStorage.get();
-        const updateBookMarkedList = [...tempStorage, bookMarkedContentList[0]];
+        // const tempStorage = bookmarkStorage.get();
+        // const updateBookMarkedList = [...tempStorage, bookMarkedContentList[0]];
 
-        bookmarkStorage.set(updateBookMarkedList);
+        // bookmarkStorage.set(updateBookMarkedList);
     }
 
     protected componentWillMount(): void {
