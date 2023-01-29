@@ -1,4 +1,5 @@
 import { GET_CONTENTS_REQUEST } from "@/actions/contents";
+import { CardList, Error } from "@/components/Shared";
 import Loader from "@/components/Shared/Loader";
 import Component from "@/core/component";
 import router from "@/router";

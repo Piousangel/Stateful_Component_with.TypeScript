@@ -12,12 +12,13 @@ export interface Contents {
 }
 
 export const Categories = {
+    myfeed: "myfeed",
     popularity: "popularity",
     news: "news",
     sports: "sports",
     webtoon: "webtoon",
     dict: "dict",
-};
+} as const;
 
 export type Category = typeof Categories[keyof typeof Categories];
 
