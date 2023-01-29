@@ -11,13 +11,15 @@ export interface Contents {
     isBookMarked: boolean;
 }
 
-export enum Category {
-    popularity = "popularity",
-    news = "news",
-    sports = "sports",
-    webtoon = "webtoon",
-    dict = "dict",
-}
+export const Categories = {
+    popularity: "popularity",
+    news: "news",
+    sports: "sports",
+    webtoon: "webtoon",
+    dict: "dict",
+};
+
+export type Category = typeof Categories[keyof typeof Categories];
 
 export enum ApiStatus {
     LOADING = "LOADING",

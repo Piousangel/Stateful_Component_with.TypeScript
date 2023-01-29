@@ -3,6 +3,7 @@ export const backURL = "http://localhost:8080";
 
 export enum PATH {
     HOME = "/",
+    MYFEED = "/myfeed",
     POPULARITY = "/popularity",
     NEWS = "/news",
     SPORTS = "/sports",

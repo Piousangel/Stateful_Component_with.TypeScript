@@ -8,6 +8,7 @@ type IPage = Record<PATH, Component>;
 
 const router = new Router<IPage>({
     [PATH.HOME]: new Home(),
+    [PATH.]
     [PATH.POPULARITY]: new Home(),
     [PATH.NEWS]: new Home(),
     [PATH.SPORTS]: new Home(),
