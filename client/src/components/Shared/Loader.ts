@@ -1,6 +1,6 @@
 function Loader(): string {
     return `
-        <h1> 로딩페이지</h3>
+        <h1>로딩 페이지 입니다.</h3>
     `;
 }
 

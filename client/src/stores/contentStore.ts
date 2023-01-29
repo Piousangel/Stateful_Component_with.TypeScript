@@ -1,61 +1,48 @@
 import actions from "@/actions";
 import Store from "@/core/store";
-import { ApiStatus, Category, Contents } from "@/types";
+import { contentService } from "@/service";
+import { ApiStatus, Categories, Contents } from "@/types";
 
-// 수정
 interface IState {
-    status: ApiStatus | null;
+    status?: ApiStatus;
     data: {
-        [key: string]: {
-            contents: Contents[];
-        };
+        [Categories.myfeed]: Contents[];
+        [Categories.popularity]: Contents[];
+        [Categories.sports]: Contents[];
+        [Categories.news]: Contents[];
+        [Categories.webtoon]: Contents[];
+        [Categories.dict]: Contents[];
     };
-    error: string | null;
+    category?: typeof Categories;
+    error?: string;
 }
 
-const initialData = {
-    // hasMore: true,
-    // lastKey: 0,
-    contents: [],
-};
-
-const initialState = {
-    state: null,
+const initialState: IState = {  
+    status: undefined,
     data: {
-        [Category.popularity]: initialData,
-        [Category.sports]: initialData,
-        [Category.news]: initialData,
-        [Category.webtoon]: initialData,
-        [Category.dict]: initialData,
+        [Categories.myfeed]: new Array<Contents>(),
+        [Categories.popularity]: new Array<Contents>(),
+        [Categories.sports]: new Array<Contents>(),
+        [Categories.news]: new Array<Contents>(),
+        [Categories.webtoon]: new Array<Contents>(),
+        [Categories.dict]: new Array<Contents>(),
     },
-    error: null,
+    category: undefined,
+    error: undefined,
 };
 
 class ContentsStore extends Store<IState> {
     protected reducer = {
-        [actions.GET_REQUEST]: ({ data: category }): void => {
-            const { status, data } = this.state;
-            // const { hasMore, lastKey } = data[category];
-            if (!hasMore || status === ApiStatus.LOADING) return;
-            this.setState({
-                ...this.state,
-                status: ApiStatus.LOADING,
-            });
-            // contentsService.getContents(category, lastKey);
+        [actions.GET_REQUEST]: (): void => {
+            contentService.getContents();
         },
-        [actions.GET_SUCCESS]: ({ data }): void => {
-            const { category, hasMore, lastKey, contents } = data;
 
-            const prevContents = this.state.data[category].contents;
-            const newData = {
-                hasMore,
-                lastKey,
-                contents: [...prevContents, ...contents],
-            };
+        [actions.GET_SUCCESS]: ({ data }): void => {
+            const { category } = data;
             this.setState({
                 ...this.state,
                 status: ApiStatus.DONE,
-                data: { ...this.state.data, [category]: newData },
+                data,
             });
         },
         [actions.GET_FAIL]: ({ error }): void => {
@@ -65,5 +52,4 @@ class ContentsStore extends Store<IState> {
 }
 
 const contentsStore = new ContentsStore(initialState);
-
 export default contentsStore;

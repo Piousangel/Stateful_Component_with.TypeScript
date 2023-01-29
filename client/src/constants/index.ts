@@ -3,6 +3,7 @@ export const backURL = "http://localhost:8080";
 
 export enum PATH {
     HOME = "/",
+    MYFEED = "/myfeed",
     POPULARITY = "/popularity",
     NEWS = "/news",
     SPORTS = "/sports",
@@ -20,3 +21,8 @@ export enum CategoryTitle {
 
 export const TIMEOUT = 5000;
 export const SERVER_ERROR = new Error("Server Error!");
+
+export enum menuSelector {
+    interest = "interest",
+    bookMark = "bookMark",
+}

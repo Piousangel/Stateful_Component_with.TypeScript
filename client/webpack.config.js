@@ -9,9 +9,7 @@ module.exports = {
         open: true,
         host: "localhost",
         port: 3000,
-        historyApiFallback: {
-            index: "public/index.html",
-        },
+        historyApiFallback: true, // 새로고침시 api fallback
     },
     devtool: "inline-source-map",
     output: {
