@@ -900,3 +900,14 @@ main {
         }
     }
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+    span {
+        font-size: 20px;
+    }
+}
