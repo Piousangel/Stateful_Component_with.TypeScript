@@ -21,3 +21,8 @@ export enum CategoryTitle {
 
 export const TIMEOUT = 5000;
 export const SERVER_ERROR = new Error("Server Error!");
+
+export enum menuSelector {
+    interest = "interest",
+    bookMark = "bookMark",
+}
