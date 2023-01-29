@@ -58,10 +58,10 @@ class Contents extends Component<{ data: boolean }> {
         </li>
         <li>
           <div>
-            <button id="news" class=${
+            <button id="economy" class=${
                 interestCategories.includes("news") ? "selected" : ""
             }>
-              <i class="icon investment"></i>
+              <i class="icon economy"></i>
                 뉴스
               <span class="blind"></span>
             </button>
@@ -91,10 +91,10 @@ class Contents extends Component<{ data: boolean }> {
         </li>
         <li>
           <div>
-            <button id="world" class=${
+            <button id="biz" class=${
                 interestCategories.includes("dict") ? "selected" : ""
             }>
-              <i class="icon world"></i>
+              <i class="icon biz"></i>
                 사전
               <span class="blind"></span>
             </button>

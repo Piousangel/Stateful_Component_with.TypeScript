@@ -1,6 +1,7 @@
+import { UPDATE_MENUBAR_REQUEST } from "@/actions/menubar";
 import Component from "@/core/component";
+import menuBarStore from "@/stores/menubarStore";
 import { newElement } from "@/utils/dom";
-
 
 interface MenuBarState {
     data: {

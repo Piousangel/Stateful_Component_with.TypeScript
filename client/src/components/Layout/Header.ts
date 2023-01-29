@@ -4,7 +4,7 @@ import Navigator from "./Navigator";
 
 class Header extends Component {
     protected initDom(): void {
-        this.$container = newElement(`<wrapper/>`);
+        this.$container = newElement(`<header class="wrapper"/>`);
     }
 
     protected initChildren(): void {
