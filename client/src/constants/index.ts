@@ -8,7 +8,7 @@ export enum PATH {
     NEWS = "/news",
     SPORTS = "/sports",
     WEBTOON = "/webtoon",
-    DICTIONARY = "/dictionary",
+    DICTIONARY = "/dict",
 }
 
 export enum CategoryTitle {
