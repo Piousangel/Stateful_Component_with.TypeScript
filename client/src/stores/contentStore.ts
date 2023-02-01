@@ -17,7 +17,7 @@ interface IState {
     error?: string;
 }
 
-const initialState: IState = {  
+const initialState: IState = {
     status: undefined,
     data: {
         [Categories.myfeed]: new Array<Contents>(),
@@ -38,7 +38,6 @@ class ContentsStore extends Store<IState> {
         },
 
         [actions.GET_SUCCESS]: ({ data }): void => {
-            const { category } = data;
             this.setState({
                 ...this.state,
                 status: ApiStatus.DONE,

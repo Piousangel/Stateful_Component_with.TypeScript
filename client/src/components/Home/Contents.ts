@@ -58,7 +58,7 @@ class Contents extends Component<{ data: boolean }> {
         </li>
         <li>
           <div>
-            <button id="economy" class=${
+            <button id="news" class=${
                 interestCategories.includes("news") ? "selected" : ""
             }>
               <i class="icon economy"></i>
@@ -80,7 +80,7 @@ class Contents extends Component<{ data: boolean }> {
         </li>
         <li>
           <div>
-            <button id="culture" class=${
+            <button id="webtoon" class=${
                 interestCategories.includes("webtoon") ? "selected" : ""
             }>
               <i class="icon culture"></i>
@@ -91,7 +91,7 @@ class Contents extends Component<{ data: boolean }> {
         </li>
         <li>
           <div>
-            <button id="biz" class=${
+            <button id="dict" class=${
                 interestCategories.includes("dict") ? "selected" : ""
             }>
               <i class="icon biz"></i>
