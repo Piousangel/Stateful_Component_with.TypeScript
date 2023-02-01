@@ -21,9 +21,14 @@ class Navigator extends Component {
       <div class="inner">
       <nav class="tabs">
         <ul>
-        <li class="selected">
+          <li class="selected">
             <a href="/">
               HOME
+            </a>
+          </li>
+          <li class=${this.checkPath(PATH.MYFEED) ? "marked" : "selected"}>
+            <a href="${PATH.MYFEED}">
+              ${CategoryTitle.myfeed}
             </a>
           </li>
           <li class=${this.checkPath(PATH.POPULARITY) ? "marked" : "selected"}>

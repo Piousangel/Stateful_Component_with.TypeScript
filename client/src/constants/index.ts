@@ -12,6 +12,7 @@ export enum PATH {
 }
 
 export enum CategoryTitle {
+    myfeed = "내 피드",
     popularity = "인기",
     news = "뉴스",
     sports = "스포츠",
