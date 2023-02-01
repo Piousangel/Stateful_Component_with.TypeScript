@@ -5,7 +5,7 @@
                 "index": 1,
                 "category": "sports",
                 "link": "https://sports.news.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 스포츠 타이틀1 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -13,7 +13,7 @@
                 "index": 2,
                 "category": "webtoon",
                 "link": "https://comic.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 웹툰 타이틀2 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -21,7 +21,7 @@
                 "index": 3,
                 "category": "news",
                 "link": "https://dict.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 뉴스 타이틀3 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -29,7 +29,7 @@
                 "index": 4,
                 "category": "news",
                 "link": "https://news.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 뉴스 타이틀4 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             }
@@ -39,7 +39,7 @@
                 "index": 5,
                 "category": "webtoon",
                 "link": "https://comic.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 웹툰 타이틀5 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -47,7 +47,7 @@
                 "index": 6,
                 "category": "webtoon",
                 "link": "https://comic.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 웹툰 타이틀6 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -55,7 +55,7 @@
                 "index": 7,
                 "category": "webtoon",
                 "link": "https://comic.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 웹툰 타이틀7 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -63,7 +63,7 @@
                 "index": 8,
                 "category": "webtoon",
                 "link": "https://comic.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 웹툰 타이틀8 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             }
@@ -73,7 +73,7 @@
                 "index": 9,
                 "category": "news",
                 "link": "https://news.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 뉴스 타이틀9 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -81,7 +81,7 @@
                 "index": 10,
                 "category": "news",
                 "link": "https://news.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 뉴스 타이틀10 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -89,7 +89,7 @@
                 "index": 11,
                 "category": "news",
                 "link": "https://news.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 뉴스 타이틀11 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -97,7 +97,7 @@
                 "index": 12,
                 "category": "news",
                 "link": "https://news.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 뉴스 타이틀12 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             }
@@ -105,33 +105,33 @@
         "dict": [
             {
                 "index": 13,
-                "category": "news",
+                "category": "dict",
                 "link": "https://dict.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 사전 타이틀13 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
             {
                 "index": 14,
-                "category": "news",
+                "category": "dict",
                 "link": "https://dict.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 사전 타이틀14 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
             {
                 "index": 15,
-                "category": "news",
+                "category": "dict",
                 "link": "https://dict.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 사전 타이틀15 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
             {
                 "index": 16,
-                "category": "news",
+                "category": "dict",
                 "link": "https://dict.naver.com/",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 사전 타이틀16 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             }
@@ -141,7 +141,7 @@
                 "index": 17,
                 "category": "sports",
                 "link": "https://sports.news.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 스포츠 타이틀17 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -149,7 +149,7 @@
                 "index": 18,
                 "category": "sports",
                 "link": "https://sports.news.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 스포츠 타이틀18 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -157,7 +157,7 @@
                 "index": 19,
                 "category": "sports",
                 "link": "https://sports.news.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 스포츠 타이틀19 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             },
@@ -165,7 +165,7 @@
                 "index": 20,
                 "category": "sports",
                 "link": "https://sports.news.naver.com/index",
-                "title": "이것은 타이틀 입니다.",
+                "title": "이것은 스포츠 타이틀20 입니다.",
                 "origin": "naver",
                 "isBookMarked": false
             }
