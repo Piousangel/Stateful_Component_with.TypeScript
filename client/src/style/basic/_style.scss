@@ -903,11 +903,14 @@ main {
 
 .footer {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    top: 600px;
+    left: 660px;
     flex-direction: column;
-    margin-top: auto;
+    transform: translateY(-80%);
+    // border: 1px solid black;
     span {
-        font-size: 20px;
+        font-size: 30px;
+        // border: 1px solid black;
     }
 }
