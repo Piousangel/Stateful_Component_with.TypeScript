@@ -18,8 +18,6 @@ function CardList({ contentsList }: CardListProps): string {
                     ({
                         category,
                         link,
-                        largeThumbnail,
-                        smallThumbnail,
                         title,
                         origin,
                         isBookMarked,
@@ -32,13 +30,6 @@ function CardList({ contentsList }: CardListProps): string {
             }>
                 <div>
                 <div onclick="window.open('${link}', '_blank')">
-                        <div class="thumb">
-                            <img src=${
-                                isBigContent
-                                    ? `${largeThumbnail}`
-                                    : `${smallThumbnail}`
-                            } loading="lazy"/>
-                        </div>
                         <ul class="info">
                             <li>${category}</li>
                             <li>${origin}</li>
