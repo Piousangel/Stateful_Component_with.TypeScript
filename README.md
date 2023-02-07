@@ -1,44 +1,53 @@
-# 프로젝트 만들어 나가는 과정 ( 1월 31일 재개 ^_^)
+# 프로젝트 만들어 나가는 과정
 
 ## 얻고자 하는 것 : 바닐라 타입스크립트로 상태기반 컴포넌트, React Flux 패턴을 좀더 깊게 이해하고자 합니다. 그리고 css도...
 
-- 클래스형 컴포넌트의 componenetDidMount, componentDidUpdate, componentWillUnmount 생명주기와 함수형 컴포넌트에서의 useEffect..
+- 클래스형 컴포넌트의 componenetDidMount, componentDidUpdate, componentWillUnmount 생명주기와 전역 상태관리와, 컴포넌트 내 상태관리
 
-# 폴더
+### 👨 실행 방법
 
-- `client`, `server` 폴더를 생성합니다.
-- 각 폴더에서 `$ yarn init` 을 통해 `package.json`을 생성합니다.
-- client 폴더에서 `$ yarn global add typescript`을 통해 TypeScript를 설치합니다.
-- `$ tsc --init`을 통해 셋업 과정을 거칩니다 => `tsconfig.json` 생성됩니다.
--  SPA로써 `public`에 `index.html` => 웹팩으로 번들링 후 빌드 시 `bundle.js` 생성합니다.
--  폴더 구조는 나중에 트리구조로 기록하겠습니다.
-
-
-### 웹팩 
-- `$ yarn add -D webpack webpack-cli webpack-dev-server webpack-merge`을 통해 웹팩 관련 노드 모듈을 생성합니다.
-### 웹팩 플러그인, 로더 
-- `$ yarn add -D html-webpack-plugin style-loader css-loader mini-css-extract-plugin` => `yarn.lock` 생성됩니다.
-- `style-loader`를 사용하는 이유 : `dev`에서는 `css`를 여러 번 수정하더라도 `style`태그에 주입하는 것이 훨씬 빨리 작동하기 때문에 `style-loader`를 사용합니다.
-### 바벨
-- `$ yarn add -D @babel/core babel-loader` , `yarn add -D @babel/preset-env` (오래된 브라우저에서 동작하기)
-### 타입스크립트
-- `$ yarn add -D typescript @babel/preset-typescript`
-
-### webpack.config.js 
-
-- `ts-loader` 관련 `$ yarn add ts-loader`
-- `sass-loader` 관련 `$ yarn add sass -g`, `$ yarn add sass-loader` 
-
-
-
-### Build -> Start
 - client : 
 0. `$cd client` 
 1. `$yarn add` 
 2. `$yarn build` 번들링 후 
 3. `$yarn dev` 로 실행
 
-- server : ( json API 서버를 사용해 개발하려고 합니다. 데이터는 naver에 있는거 가져와 쓰려고 합니다...! )
+- server : 
 0. `$cd server`
 1. `$npm install` 
 2. `$yarn start:server` 로 실행
+
+### 🌃 이미지
+
+|  UI 이름   | GIF 이미지 |
+| :-----: | ------ |
+| 관심사 화면 UI |     ![상태기반컴포넌트1](https://user-images.githubusercontent.com/55525574/217164983-ca264595-1895-4e51-aac0-b87719d7eaff.gif)  |
+| 카테고리 별 데이터 받아오는 UI |   ![상태기반2](https://user-images.githubusercontent.com/55525574/217165096-348a60ff-831d-4170-b6f5-4c8151be774e.gif)     |
+
+### ✅ client/src 폴더 구조
+
+|  폴더 구조   | 이미지 |
+| :-----: | ------ |
+| client/src |     ![스크린샷 2023-01-06 오후 10 00 10](https://user-images.githubusercontent.com/55525574/211017408-548d3a74-e98c-489f-9884-f5ee77368b47.png)|
+
+### ✅ 사용 기술, 체크 목록
+
+- [x] TypeScript을 사용했습니다.
+- [x] Mock API를 활용하여 카테고리별 컨텐츠를 보여줬습니다.
+- [x] 컨텐츠 데이터를 활용해 큰 컨텐츠 카드, 작은 컨텐츠 카드를 랜덤으로 보여줬습니다. (~~생각해보니 컨텐츠 길이 별로 나누는 것이 좋았을 것 같습니다.~~) </br>__title 길이별로 카드를 분류했습니다.__
+- [x] 새로고침시 패턴을 유지하되 임의의 순서로 배치했습니다.
+- [x] 카테고리 별 탭 클릭 시, 탭이 이동하고 컨텐츠 리스트가 변경됩니다.
+- [x] 선택된 탭과 선택되지 않은 탭은 스타일 차이가 있습니다. (회색 / 검정)
+- [x] 각 컨텐츠 카드를 마우스로 클릭하면, 해당하는 상세 페이지로 이동합니다.
+- [x] 상세페이지는 새탭 열기로 구현하였습니다.
+
+- [x] 선택되지 않은 관심사 카드를 누르면 해당 관심사는 선택됩니다.
+- [x] 선택된 관심사 카드를 누르면 해당 관심사는 선택 해제됩니다.
+- [x] 선택된 관심사 카드와 선택되지 않은 관심사 카드는 스타일 차이가 있습니다.
+
+###  회고
+
+- 북마크 구현은 JSON server API 통해 DB에 저장, 호출하거나, JSON 데이터 중 인덱스로 사용할만한 항목을 이용해 구현할 수 있을 것이라고 생각합니다.
+- webpack을 사용해 bundling 하기 위해 구글링을 통해 `package.json`, `webpack.config.js` 설정하는 것에 시간을 할애했지만 배울 수 있는 좋은 기회였습니다.
+- 좋은 폴더 구조설계에 대해 생각하며 배우고, 익힌 좋은 시간이었습니다.
+
