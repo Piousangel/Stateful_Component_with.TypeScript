@@ -1,8 +1,6 @@
 # 프로젝트 만들어 나가는 과정
 
-## 얻고자 하는 것 : 바닐라 타입스크립트로 상태기반 컴포넌트, React Flux 패턴을 좀더 깊게 이해하고자 합니다. 그리고 css도...
-
-- 클래스형 컴포넌트의 componenetDidMount, componentDidUpdate, componentWillUnmount 생명주기와 전역 상태관리와, 컴포넌트 내 상태관리
+### 프로젝트를 통해 얻고자 하는 것 : 바닐라 타입스크립트로 상태기반 컴포넌트를 구현해 보면서 this 바인딩을 통한 state처리와 Flux 패턴과 Observer패턴을 이용한 전역 상태관리(Redux), 컴포넌트 내 상태관리를 좀더 깊게 이해하고자 합니다.
 
 ### 👨 실행 방법
 
